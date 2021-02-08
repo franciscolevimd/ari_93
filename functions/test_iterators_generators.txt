@@ -1,10 +1,10 @@
-This is a doctest based regression suite for generators.py
+This is a doctest based regression suite for iterators_generators.py
 Each '>>' line is run as if in a python shell, and counts as a test.
 The next line, if not '>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
 
 
->>> from generators import natural_numbers, draw_triangle
+>>> from iterators_generators import print_prime_numbers, natural_numbers, get_pixel
 
 
 >>> for number in natural_numbers(): 
@@ -14,7 +14,19 @@ If anything doesn't match exactly (including trailing spaces), the test fails.
 3
 
 
->>> for pixel in draw_triangle():
+>>> for pixel in get_pixel():
 ... 	print(pixel)
 ... 	break
 #
+
+
+>>> print_prime_numbers()
+1
+3
+5
+7
+Fin
+
+
+
+
