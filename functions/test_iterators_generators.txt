@@ -4,7 +4,8 @@ The next line, if not '>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
 
 
->>> from iterators_generators import print_prime_numbers, natural_numbers, get_pixel
+>>> import itertools
+>>> from iterators_generators import print_prime_numbers, natural_numbers, get_pixel, sort_sequence, fibonnaci
 
 
 >>> for number in natural_numbers(): 
@@ -27,6 +28,13 @@ If anything doesn't match exactly (including trailing spaces), the test fails.
 7
 Fin
 
+
+>>> print([number for number in sort_sequence([1,43,2,6,0,12,4,22,5,2])]) 
+[43, 22, 12, 6, 5, 4, 2, 2, 1, 0]
+
+
+>>> print(list(itertools.islice(fibonnaci(), 10)))
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
 
 

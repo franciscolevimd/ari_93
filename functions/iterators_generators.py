@@ -1,3 +1,6 @@
+import itertools
+
+
 class CrazyIterable:
 	"""Testing the iterable objects.
 
@@ -51,6 +54,8 @@ def get_pixel():
 def print_prime_numbers():
 	iterable_numbers = CrazyIterable(1, 3, 5, 7)
 	prime_numbers = iter(iterable_numbers)
+	# for number in prime_numbers:
+	# 	print(number)
 	try:
 		number = prime_numbers.__next__()
 		while number:
@@ -60,20 +65,47 @@ def print_prime_numbers():
 		print('Fin')
 
 
-def main():
-	for number in natural_numbers():
-		print(number)
+def sort_sequence(sequence):
+	if len(sequence) == 0: return
+	positions = []
+	actual = sequence[0]
+	temp = 0	
+	while len(positions) < len(sequence):
+		for j in range(len(sequence)):
+			if actual < sequence[j] and j not in positions:
+				actual = sequence[j]
+				temp = j
+		positions.append(temp)
+		yield actual
+		actual = -1
 
-	column = 0
-	for i in range(7):
-		for pixel in get_pixel():
-			print(pixel, end='')
-			if column == i:
-				column = 0 
-				break
-			column += 1
-		print('')
-	print_prime_numbers()
+
+def fibonnaci():
+	x, y = 0, 1
+	while True:
+		yield x
+		x, y = y, y + x
+
+
+def main():
+	# for number in natural_numbers():
+	# 	print(number)
+
+	# column = 0
+	# for i in range(7):
+	# 	for pixel in get_pixel():
+	# 		print(pixel, end='')
+	# 		if column == i:
+	# 			column = 0 
+	# 			break
+	# 		column += 1
+	# 	print('')
+
+	# print_prime_numbers()
+
+	print([number for number in sort_sequence([1,43,2,6,0,12,4,22,5,2])]) 
+
+	# print(list(itertools.islice(fibonnaci(), 10)))
 
 
 if __name__ == '__main__':
