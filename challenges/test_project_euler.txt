@@ -1,0 +1,11 @@
+This is a doctest based regression suite for project_euler.py
+Each '>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+
+>>> from project_euler import sum_multiples_3_5
+
+
+>>> sum_multiples_3_5(1000)
+233168
