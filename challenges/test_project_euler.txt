@@ -4,8 +4,40 @@ The next line, if not '>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
 
 
->>> from project_euler import sum_multiples_3_5
+>>> from project_euler import sum_multiples_3_5, sum_even_fibonacci_numbers, eratosthenes_sieve, is_prime, factorize_division, fermat_factors, factorize
 
 
 >>> sum_multiples_3_5(1000)
 233168
+
+
+>>> sum_even_fibonacci_numbers(4000000)
+4613732
+
+
+>>> eratosthenes_sieve()
+[2, 3, 5, 7]
+
+
+>>> eratosthenes_sieve(100)
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+
+
+>>> is_prime(851_475_143)
+True
+
+
+>>> is_prime(1000)
+False
+
+
+>>> prime_generator = factorize_division(81); next(prime_generator)
+3
+
+
+>>> fermat_factors(261_405_929)
+[15773, 16573]
+
+
+>>> factorize(600_851_475_143)
+[71, 839, 1471, 6857]
