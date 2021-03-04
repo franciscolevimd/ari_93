@@ -1,0 +1,15 @@
+This is a doctest based regression suite for simple_data_type.py
+Each '>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+
+>>> from simple_data_type import calculate_payment,sum_numbers
+
+
+>>> calculate_payment(34.27, 8)
+274.16
+
+
+>>> sum_numbers(13)
+91
