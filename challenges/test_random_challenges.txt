@@ -4,7 +4,7 @@ The next line, if not '>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
 
 
->>> from random_challenges import is_palindorme, sort_only_natural_numbers
+>>> from random_challenges import is_palindorme, sort_only_natural_numbers, add_accumulated
 
 
 >>> is_palindorme('Reconocer')
@@ -25,3 +25,21 @@ False
 Traceback (most recent call last):
 	...
 TypeError: 'NoneType' object is not iterable
+
+
+>>> add_accumulated(None)
+Traceback (most recent call last):
+	...
+TypeError: 'NoneType' object is not iterable
+
+
+>>> add_accumulated([])
+[]
+
+
+>>> add_accumulated([1, 0, 1, 0, 1])
+[1, 1, 2, 2, 3]
+
+
+>>> add_accumulated([1, 5, 7])
+[1, 6, 13]
