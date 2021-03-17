@@ -1,11 +1,24 @@
+import numpy as np
 from itertools import accumulate
+
+
+def build_square(n):
+	"""Builds a square with side length n and fills the square with the value of n.
+
+	Args:
+		n (int): Side length and fill value of the square.
+
+	Returns:
+		numpy.ndarray: Matrix representing a square.
+	"""
+	return np.full((n, n), n)
 
 
 def add_accumulated(numbers):
 	"""Returns the add accumulate of each element of a list numbers.
 
 	Example: 
-	
+
 		In:[1, 5, 7]
 		Out: [1, 6, 13]
 
@@ -69,11 +82,15 @@ def main():
 	# print(f'Sort list: {sort_numbers}')
 
 	# numbers = None
-	numbers = []
+	# numbers = []
 	# numbers = [1, 5, 7]
-	accumulate = add_accumulated(numbers)
-	print(f'Numbers: {numbers}')
-	print(f'Accumulate: {accumulate}')
+	# accumulate = add_accumulated(numbers)
+	# print(f'Numbers: {numbers}')
+	# print(f'Accumulate: {accumulate}')
+
+	n = None
+	square = build_square(n)
+	print(f'Square[{n}x{n}]\n{square}')
 
 
 if __name__ == '__main__':
