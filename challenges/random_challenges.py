@@ -2,6 +2,17 @@ import numpy as np
 from itertools import accumulate
 
 
+def split_sequences():
+	"""Request a sequence of words, order this sequence, and discard repeated words.
+	
+	Returns:
+		str: Orderly sequence without repetition of words.
+	"""
+	sequence = input('Input a word sequence: ').upper().split()
+	sort_sequence = sorted(set(sequence))
+	return ' '.join(sort_sequence)
+
+
 def build_square(n):
 	"""Builds a square with side length n and fills the square with the value of n.
 
@@ -88,9 +99,11 @@ def main():
 	# print(f'Numbers: {numbers}')
 	# print(f'Accumulate: {accumulate}')
 
-	n = None
-	square = build_square(n)
-	print(f'Square[{n}x{n}]\n{square}')
+	# n = None
+	# square = build_square(n)
+	# print(f'Square[{n}x{n}]\n{square}')
+
+	print(split_sequences())
 
 
 if __name__ == '__main__':
