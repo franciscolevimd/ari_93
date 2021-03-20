@@ -1,6 +1,20 @@
 import numpy as np
 from itertools import accumulate
 
+8800000
+673000
+def sort_by_population(cities):
+	"""Returns the name of cities with a total population greater than 200,000 inhabitants and orders them from highest to lowest.
+
+	Args:
+		cities (dict): Cities data.
+
+	Returns:
+		dict: List with the name of the cities ordered by total population.
+	"""	
+	return [city for city, population in dict(sorted(cities.items(), key = lambda city: city[0])).items() if population > 200_000]
+	# return sorted((city for city, population in cities.items() if population > 200_000), key= lambda city: cities[city], reverse= True)
+
 
 def count_appearances(text):
 	"""Count the total of all the letters in the text.
@@ -148,9 +162,13 @@ def main():
 	# input_string = input('Give me a string: ')
 	# print(f'The total of substrings on {input_string.upper()} is {count_substrings(input_string)}.')
 
-	result = count_appearances('abcdasdfacdjop')
-	print(f'result= {result}')
-	print('\n'.join([f'{key}: {value}' for key,value in result.items()]))
+	# result = count_appearances('abcdasdfacdjop')
+	# print(f'result= {result}')
+	# print('\n'.join([f'{key}: {value}' for key,value in result.items()]))
+
+	cities = {'Valencia': 794000, 'Salamanca': 144000, 'Cádiz': 116000, 'Madrid': 3200000}
+	print(cities)
+	print(sort_by_population(cities))
 
 
 if __name__ == '__main__':

@@ -4,7 +4,7 @@ The next line, if not '>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
 
 
->>> from random_challenges import is_palindorme, sort_only_natural_numbers, add_accumulated, build_square, count_substrings, count_appearances
+>>> from random_challenges import is_palindorme, sort_only_natural_numbers, add_accumulated, build_square, count_substrings, count_appearances, sort_by_population
 
 
 >>> is_palindorme('Reconocer')
@@ -92,3 +92,7 @@ AttributeError: 'NoneType' object has no attribute 'upper'
 
 >>> count_appearances('abcdasdfacdjop')
 {'a': 3, 'b': 1, 'c': 2, 'd': 3, 's': 1, 'f': 1, 'j': 1, 'o': 1, 'p': 1}
+
+
+>>> sort_by_population({'Cuautitlán': 108000, 'C. México': 8800000, 'Zamora': 141000, 'Guadalupe': 673000})
+['C. México', 'Guadalupe']
