@@ -4,7 +4,7 @@ The next line, if not '>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
 
 
->>> from random_challenges import is_palindorme, sort_only_natural_numbers, add_accumulated, build_square
+>>> from random_challenges import is_palindorme, sort_only_natural_numbers, add_accumulated, build_square, count_substrings
 
 
 >>> is_palindorme('Reconocer')
@@ -71,3 +71,18 @@ array([[5, 5, 5, 5, 5],
        [5, 5, 5, 5, 5],
        [5, 5, 5, 5, 5],
        [5, 5, 5, 5, 5]])
+
+
+AAXOXXA
+>>> count_substrings('aax0xxa')
+6
+
+
+>>> count_substrings('AxAxAXaxaX')
+15
+
+
+>>> count_substrings(None)
+Traceback (most recent call last):
+	...
+AttributeError: 'NoneType' object has no attribute 'upper'

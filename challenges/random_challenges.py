@@ -2,6 +2,26 @@ import numpy as np
 from itertools import accumulate
 
 
+def count_substrings(main_string):
+	"""Count the substrings starting with A and ending with X of a main string.
+
+	For example, given the input string "CAXAAYXZA", there are four substrings that start with "A" and end with "X", 
+	which are: AX, AXAAYX, AAYX, and AYX.
+
+	Args:
+		main_string (str): Main string.
+
+	Returns:
+		int: Total substrings starting with A and ending with X.
+	"""
+	total_substring = 0
+	main_string = main_string.upper()
+	for i in range(len(main_string)):
+		if main_string[i] == 'A':
+			total_substring += main_string.count('X', i, len(main_string))
+	return total_substring
+
+
 def split_sequences():
 	"""Request a sequence of words, order this sequence, and discard repeated words.
 	
@@ -103,7 +123,10 @@ def main():
 	# square = build_square(n)
 	# print(f'Square[{n}x{n}]\n{square}')
 
-	print(split_sequences())
+	#print(split_sequences())
+
+	input_string = input('Give me a string: ')
+	print(f'The total of substrings on {input_string.upper()} is {count_substrings(input_string)}.')
 
 
 if __name__ == '__main__':
