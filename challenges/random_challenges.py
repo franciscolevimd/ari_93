@@ -2,6 +2,26 @@ import numpy as np
 from itertools import accumulate
 
 
+def count_appearances(text):
+	"""Count the total of all the letters in the text.
+
+	Args:
+		text (str): Any text.
+
+	Returns:
+		dict: Dictionary with the total of each letter of text.
+	"""
+	# result = dict.fromkeys(text, 0)
+	# for letter in text:
+	# 	result[letter] += 1
+	# return result
+	result = {}
+	for letter in text:
+		result[letter] = result.get(letter, 0) + 1
+	return result
+
+
+
 def count_substrings(main_string):
 	"""Count the substrings starting with A and ending with X of a main string.
 
@@ -123,10 +143,14 @@ def main():
 	# square = build_square(n)
 	# print(f'Square[{n}x{n}]\n{square}')
 
-	#print(split_sequences())
+	# print(split_sequences())
 
-	input_string = input('Give me a string: ')
-	print(f'The total of substrings on {input_string.upper()} is {count_substrings(input_string)}.')
+	# input_string = input('Give me a string: ')
+	# print(f'The total of substrings on {input_string.upper()} is {count_substrings(input_string)}.')
+
+	result = count_appearances('abcdasdfacdjop')
+	print(f'result= {result}')
+	print('\n'.join([f'{key}: {value}' for key,value in result.items()]))
 
 
 if __name__ == '__main__':
