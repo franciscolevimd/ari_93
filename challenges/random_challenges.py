@@ -1,8 +1,7 @@
 import numpy as np
 from itertools import accumulate
 
-8800000
-673000
+
 def sort_by_population(cities):
 	"""Returns the name of cities with a total population greater than 200,000 inhabitants and orders them from highest to lowest.
 
