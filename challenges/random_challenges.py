@@ -2,6 +2,24 @@ import numpy as np
 from itertools import accumulate
 
 
+def character_map(word):
+	"""Replaces characters in text with numbers and saves them in a list.
+
+	Args:
+		word (str): The original string.
+
+	Returns:
+		list: The representation of each character in number.
+	"""
+	result = []
+	char_map = {}
+	for letter in word:
+		char_map[letter] = char_map.get(letter, len(char_map))
+		result.append(char_map[letter])
+	return result
+
+
+
 def sort_by_population(cities):
 	"""Returns the name of cities with a total population greater than 200,000 inhabitants and orders them from highest to lowest.
 
@@ -165,10 +183,15 @@ def main():
 	# print(f'result= {result}')
 	# print('\n'.join([f'{key}: {value}' for key,value in result.items()]))
 
-	cities = {'Valencia': 794000, 'Salamanca': 144000, 'Cádiz': 116000, 'Madrid': 3200000}
-	print(cities)
-	print(sort_by_population(cities))
+	# cities = {'Valencia': 794000, 'Salamanca': 144000, 'Cádiz': 116000, 'Madrid': 3200000}
+	# print(cities)
+	# print(sort_by_population(cities))
 
+	word = 'baaacbb'
+	print(f'word: {word}')
+	word_numbers = character_map(word)
+	print(f'word numbers: {word_numbers}')
+	
 
 if __name__ == '__main__':
 	main()
